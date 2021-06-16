@@ -18,15 +18,32 @@ class SlingShot{
         this.Slingshot.bodyA = null;
     }
 
-    display(){ image(this.sling1,200,20);
+    display(){ 
+        image(this.sling1,200,20);
         image(this.sling2,170,20);
-
         if(this.Slingshot.bodyA){
             
             var pointA = this.Slingshot.bodyA.position;
             var pointB = this.pointB;
             strokeWeight(4);
-            line(pointA.x, pointA.y, pointB.x, pointB.y);
+
+            if (pointA.x<200){
+          
+            line(pointA.x-20,pointA.y,pointB.x-20,50)
+            line(pointA.x-20,pointA.y,pointB.x+20,50)
+
+            image(this.sling3,pointA.x-30,pointA.y-10,20,30)
+            }
+
+            else{
+
+           
+            line(pointA.x+20,pointA.y,pointB.x-20,50)
+            line(pointA.x+20,pointA.y,pointB.x+20,50)
+
+            image(this.sling3,pointA.x+30,pointA.y-10,20,30)
+
+            }
 
            
             
